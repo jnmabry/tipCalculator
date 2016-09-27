@@ -1,8 +1,17 @@
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
+.col-centered{
+float: none;
+margin: 0 auto;
+}
+
+/*TYPOGRAPHY*/
+
+h3{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+h4{
+    margin-top: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
 }
