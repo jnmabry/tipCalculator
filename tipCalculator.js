@@ -6,6 +6,7 @@ var billAmt = 0;
 
 // Calculate Tip Amount
 function calculateTip () {
+    
     billAmt = $("#billCost").val();
     console.log(billAmt);
     if( $("#service").val() == $("#outstanding").val()) {
@@ -41,7 +42,24 @@ function billDivide(calculateTip){
     console.log(billTotalPp);
     console.log(billTotalAmt);
 
- 
+    
+
+// Append HTML String with Variables   
+
+    var templateDisplay = '<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" id="tempDiv">'
+    templateDisplay += '<h4>Tip Total</h4>'
+    templateDisplay += '<h3>$' + Math.round(100*tipAmt)/100 + '</h3>'
+    templateDisplay += '</div>'
+    templateDisplay += '<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">'
+    templateDisplay += '<h4>Bill Total</h4>'
+    templateDisplay += '<h3>$'+ Math.round(100*billTotalPp)/100 +'</h3>'
+    templateDisplay += '</div>'
+    templateDisplay += '<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">'
+    templateDisplay += '<h4>Bill + Tip</h4>'
+    templateDisplay += '<h3>$' + Math.round(100*billTotalAmt)/100 + '</h3>'
+    templateDisplay += '</div>'
+
+    $('#infoDisplay').html(templateDisplay);
 }
 
 // Show Tip Amount and Total Bill
@@ -50,3 +68,4 @@ function billDivide(calculateTip){
 $(function(){
     $("#calculate").on("click", calculateTip);
 });
+
