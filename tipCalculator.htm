@@ -20,6 +20,11 @@
 
     <link rel="stylesheet" href="tipCalculator.css" type="text/css">
 
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "43bb414d-4655-42af-beb7-7b491a6c97aa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -29,17 +34,17 @@
         <div class="row" >
             <h1 class="text-center">TIP.sy</h1><br />
         </div>
-        <div class="row">
-            <div class=" col-xs-11 col-sm-10 col-md-8 col-lg-7 col-centered" id="calcDiv">
+        <div class="row" id="calcDiv">
+            <div class=" col-xs-11 col-sm-11 col-md-8 col-lg-7 col-centered" id="calcDiv">
                 <div class="thumbnail text-center form-group">
                     <h2> Tip Calculator</h2><br />
 
                     <label for="billCost"> How Much Was Your Bill?</label>
-                    <input type="number" class="form-control" id="billCost" placeholder="Enter Cost"><br />
+                    <input type="text" class="form-control numInputs" id="billCost" placeholder="Enter Cost" maxlength="6"/><br />
                    
                     <label for="service"> How Was Your Service?</label>
                     <select class="form-control form-control-lg" id="service">
-                        <option>--Chose an Option--</option>
+                        <option id="defaultOption" selected="selected">--Chose an Option--</option>
                         <option id="outstanding">30% Outstanding</option>
                         <option id="good">20% Good</option>
                         <option id="okay">15% It was okay</option>
@@ -48,26 +53,32 @@
                     </select><br />
 
                     <label for="peopleSharing"> How many people are sharing the bill?</label>
-                    <input type="number" class="form-control" id="peopleSharing" placeholder="Enter Number Sharing"><br />
+                    <input type="number" class="form-control numInputs" id="peopleSharing" placeholder="Enter Number Sharing"/><br />
                     <button type="submit" class="btn btn-primary" id="calculate">Calculate Tip</button>
+                    <button type="reset" class="btn btn-primary" id="reset">Reset</button>
 
                     <div class="row text-center" id="infoDisplay">
                       
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                             <h4>Tip Total</h4>
-                            <h3>$10</h3>
+                            <h3>$0</h3>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                             <h4>Bill Total</h4>
-                            <h3>$100</h3>
+                            <h3>$0</h3>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                             <h4>Bill + Tip</h4>
-                            <h3>$110</h3>
+                            <h3>$0</h3>
                         </div>
 
                     </div>
 
+                </div>
+                <div class="row text-center">
+                <span class='st_facebook_large' displayText='Facebook'></span>
+                <span class='st_twitter_large' displayText='Tweet'></span>
+                <span class='st_email_large' displayText='Email'></span>
                 </div>
             </div>
         </div>

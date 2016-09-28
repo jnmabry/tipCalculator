@@ -7,6 +7,9 @@ margin: 0 auto;
     border-radius: 30px;
     background-color:rgba(128, 158, 79, 0.45);
 }
+#calcDiv{
+    margin-top: 0px;
+}
 
 /*TYPOGRAPHY*/
 
@@ -20,6 +23,7 @@ body {
 h1{
     font-size: 90px;
     color: #1AAAAB;
+    margin-bottom: 0px;
 }
 
 h2{

@@ -8,7 +8,6 @@ var billAmt = 0;
 function calculateTip () {
     
     billAmt = $("#billCost").val();
-    console.log(billAmt);
     if( $("#service").val() == $("#outstanding").val()) {
         tipAmt = billAmt * .30;
         billDivide(tipAmt);
@@ -25,13 +24,11 @@ function calculateTip () {
         tipAmt = billAmt * .05;
         billDivide(tipAmt);
     }
-        console.log("Didn't make a service choice!")
 }
 
 
 // Divide Total Bill by Amount of People Sharing
 function billDivide(calculateTip){
-    console.log("Made it to billDivide");
     pplSharing = $("#peopleSharing").val();
 
     billTotalPp = billAmt / pplSharing;
@@ -62,10 +59,27 @@ function billDivide(calculateTip){
     $('#infoDisplay').html(templateDisplay);
 }
 
+
+// Reset All Fields
+function resetFields() {
+    location.reload();
+}
+
 // Show Tip Amount and Total Bill
 
 
 $(function(){
+
+    $(".numInputs").on("keypress keyup blur",function (event) {
+            //this.value = this.value.replace(/[^0-9\.]/g,'');
+    $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+            if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+                event.preventDefault();
+            }
+        });
+
     $("#calculate").on("click", calculateTip);
+
+    $("#reset").on("click", resetFields);
 });
 
